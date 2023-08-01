@@ -1,14 +1,24 @@
 // Write your JavaScript code here!
 
 window.addEventListener("load", function() {
-    let form = document.querySelector("form");
-    //form.addEventListener("submit", function(event){
-    //let pilot = document.querySelector("input[name=pilotName]");
-    //let copilot = document.querySelector("input[name=copilotName]");
-    //let fuelLevel = document.querySelector("input[name=fuelLevel]");
-    //let cargoLevel = document.querySelector("input[name=cargoMass]");
-    formSubmission();
-    //});
+    // Define DOM objects to call in formSubmission
+    let launchForm = document.getElementById("launchForm");
+    let pilotName = document.querySelector("input[name=pilotName]");
+    let copilotName = document.querySelector("input[name=copilotName]");
+    let fuelLevelNumber = document.querySelector("input[name=fuelLevel]");
+    let cargoLevelMass = document.querySelector("input[name=cargoMass]");
+    let faultyItemsList = document.getElementById("faultyItems");
+
+    // Define DOM objects to update "Awaiting Information"
+    let pilotStatus = document.getElementById("pilotStatus");
+    let copilotStatus = document.getElementById("copilotStatus");
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoStatus = document.getElementById("cargoStatus");
+    let launchStatus = document.getElementById("launchStatus");
+    
+    formSubmission(launchForm, faultyItemsList, pilotName, copilotName, fuelLevelNumber, cargoLevelMass);
+    
+    
 
 
    let listedPlanets;
